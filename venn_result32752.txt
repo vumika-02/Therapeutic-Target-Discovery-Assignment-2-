@@ -1,0 +1,32 @@
+Names	total	elements
+BottleNeck_Hub genes Degree_Hub genes EcCentricity_Hub genes MCC_Hub genes MNC_Hub genes	1	CDK1
+Degree_Hub genes MCC_Hub genes MNC_Hub genes	10	KIF20A
+		RRM2
+		CCNB1
+		TOP2A
+		CENPF
+		DLGAP5
+		NUSAP1
+		MELK
+		PRC1
+		ASPM
+Degree_Hub genes MNC_Hub genes	1	CDC20
+BottleNeck_Hub genes EcCentricity_Hub genes	4	CXCL8
+		DSG2
+		GJA1
+		FN1
+MCC_Hub genes	1	KIF4A
+BottleNeck_Hub genes	7	SPRR1B
+		S100A12
+		FOS
+		UBD
+		CXCL12
+		CXCL9
+		DSG3
+EcCentricity_Hub genes	7	MMP12
+		PLAT
+		IGFBP3
+		DSC2
+		ANXA1
+		MMP7
+		TUBB2A
