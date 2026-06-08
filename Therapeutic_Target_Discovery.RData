@@ -1,0 +1,38 @@
+# Raw DEG list
+deg <- read.csv("deg_results-GSE9750.csv", header = TRUE)
+summary(abs(deg$logFC) > 1.5)   # logFC filter check
+summary(deg$adj.P.Val < 0.05)
+deg_clean <- deg[!is.na(deg$logFC) & !is.na(deg$adj.P.Val),]
+deg_filtered <- subset(deg_clean, abs(logFC) > 1.5 & adj.P.Val < 0.05)
+nrow(deg_filtered)
+deg_genes <- deg_filtered$Gene
+write.table(deg_genes, "DEG_for_STRING.txt", quote=FALSE, row.names=FALSE, col.names=FALSE)
+library(clusterProfiler)
+library(org.Hs.eg.db)
+library(clusterProfiler)
+library(org.Hs.eg.db)
+
+# Module 1
+module1_genes <- read.csv("Module1_genes.csv", stringsAsFactors = FALSE)$name
+ego_module1 <- enrichGO(gene          = module1_genes,
+                        OrgDb         = org.Hs.eg.db,
+                        keyType       = "SYMBOL",
+                        ont           = "BP",
+                        pAdjustMethod = "BH",
+                        pvalueCutoff  = 0.05,
+                        qvalueCutoff  = 0.05)
+
+# Module 2
+module2_genes <- read.csv("Module2_genes.csv", stringsAsFactors = FALSE)$name
+ego_module2 <- enrichGO(gene          = module2_genes,
+                        OrgDb         = org.Hs.eg.db,
+                        keyType       = "SYMBOL",
+                        ont           = "BP",
+                        pAdjustMethod = "BH",
+                        pvalueCutoff  = 0.05,
+                        qvalueCutoff  = 0.05)
+
+# Export results
+write.csv(as.data.frame(ego_module1), "GO_Module1.csv", row.names = FALSE)
+write.csv(as.data.frame(ego_module2), "GO_Module2.csv", row.names = FALSE)
+save.image("E:/Information/Assignment-No-02/Therapeutic_Target_Discovery.RData")

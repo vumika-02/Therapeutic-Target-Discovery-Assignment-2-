@@ -1,0 +1,8 @@
+MCODE::Clusters (1),MCODE::Node Status (1),MCODE::Score (1),name,selected,shared name
+Cluster 2,Seed,6,CDC7,FALSE,CDC7
+Cluster 2,Clustered,6,GINS1,FALSE,GINS1
+Cluster 2,Clustered,5,GMNN,FALSE,GMNN
+Cluster 2,Clustered,5.153846154,MCM6,FALSE,MCM6
+Cluster 2,Clustered,5.5,MCM2,FALSE,MCM2
+Cluster 2,Clustered,5,RFC4,FALSE,RFC4
+Cluster 2,Clustered,5.515151515,MCM5,FALSE,MCM5
